@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKY-Online英会話スクール | マインクラフトで英語を話す子になる</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Kosugi+Maru&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+    :root {
+      --sky-deep:    #0B3D6E;
+      --sky-mid:     #1A6BBF;
+      --sky-light:   #D6EAFF;
+      --sky-pale:    #EEF6FF;
+      --green-deep:  #1B5E20;
+      --green-mid:   #2E7D32;
+      --green-light: #C8E6C9;
+      --green-pale:  #F1F8E9;
+      --gold:        #F59E0B;
+      --gold-deep:   #92400E;
+      --gold-pale:   #FEF3C7;
+      --white:       #FFFFFF;
+      --text-main:   #1A1A2E;
+      --text-sub:    #3D5A80;
+      --text-muted:  #6B7C93;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Kosugi Maru', sans-serif; color: var(--text-main); background: #F0F4F8; }
+    .lp { max-width: 680px; margin: 0 auto; background: var(--sky-pale); overflow: hidden; }
+
+    /* HERO */
+    .hero { background: var(--sky-deep); padding: 3rem 2rem 2.5rem; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 100% 0%, rgba(26,107,191,0.55) 0%, transparent 70%),
+                  radial-gradient(ellipse 40% 60% at 0% 100%, rgba(46,125,50,0.35) 0%, transparent 70%);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(214,234,255,0.15); border: 1px solid rgba(214,234,255,0.4);
+      color: #D6EAFF; font-size: 12px; font-weight: 700;
+      padding: 5px 16px; border-radius: 20px; margin-bottom: 1.25rem; position: relative;
+    }
+    .hero h1 {
+      font-family: 'Nunito', sans-serif; font-size: 30px; font-weight: 900;
+      color: #FFF; line-height: 1.45; margin-bottom: 0.75rem; position: relative;
+    }
+    .hero h1 em { font-style: normal; color: #FCD34D; display: block; }
+    .hero-sub { font-size: 14px; color: #B8D4F0; line-height: 1.9; margin-bottom: 1.75rem; position: relative; }
+    .hero-photo { position: relative; border-radius: 16px; overflow: hidden; margin-bottom: 1.75rem; line-height: 0; }
+    .hero-photo img { width: 100%; height: 260px; object-fit: cover; object-position: center 20%; display: block; border-radius: 16px; }
+    .hero-photo-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(11,61,110,0.45) 100%);
+      border-radius: 16px;
+    }
+    .hero-cta {
+      display: block; background: var(--gold); color: var(--gold-deep);
+      font-family: 'Nunito', sans-serif; font-size: 17px; font-weight: 800;
+      padding: 16px 28px; border-radius: 14px; border: none; cursor: pointer;
+      text-align: center; text-decoration: none; position: relative; width: 100%;
+      transition: transform 0.12s; box-shadow: 0 4px 20px rgba(245,158,11,0.4);
+    }
+    .hero-cta:hover { transform: translateY(-2px); }
+
+    /* SECTIONS */
+    .section { padding: 2rem 1.75rem; }
+    .section + .section { border-top: 1px solid rgba(11,61,110,0.08); }
+    .sec-label { font-size: 11px; font-weight: 700; color: var(--sky-mid); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .sec-title { font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 900; color: var(--sky-deep); margin-bottom: 1.5rem; line-height: 1.4; }
+
+    /* CATCH */
+    .catch-section { background: var(--white); padding: 2.5rem 2rem; text-align: center; border-bottom: 4px solid var(--sky-light); }
+    .catch-section h2 { font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 900; color: var(--sky-deep); line-height: 1.6; margin-bottom: 1rem; }
+    .catch-section h2 span { color: var(--green-mid); }
+    .catch-section p { font-size: 14px; color: var(--text-sub); line-height: 2; }
+
+    /* FEATURES */
+    .features-section { background: var(--sky-pale); }
+    .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .fc { background: var(--white); border-radius: 14px; padding: 1.25rem; border-top: 4px solid transparent; transition: transform 0.15s; }
+    .fc:hover { transform: translateY(-3px); }
+    .fc.sky   { border-top-color: var(--sky-mid); }
+    .fc.green { border-top-color: var(--green-mid); }
+    .fc.gold  { border-top-color: var(--gold); }
+    .fc.teal  { border-top-color: #00897B; }
+    .fc-icon { width: 42px; height: 42px; border-radius: 11px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem; font-size: 19px; }
+    .ic-sky   { background: var(--sky-light);   color: var(--sky-deep); }
+    .ic-green { background: var(--green-light); color: var(--green-deep); }
+    .ic-gold  { background: var(--gold-pale);   color: var(--gold-deep); }
+    .ic-teal  { background: #E0F2F1; color: #00695C; }
+    .fc h3 { font-size: 14px; font-weight: 700; color: var(--sky-deep); margin-bottom: 5px; }
+    .fc p  { font-size: 12px; color: var(--text-muted); line-height: 1.8; }
+
+    /* FLOW */
+    .flow-section { background: var(--green-pale); }
+    .flow-step { display: flex; gap: 14px; align-items: flex-start; padding: 1rem 0; border-bottom: 1px dashed rgba(46,125,50,0.25); }
+    .flow-step:last-child { border-bottom: none; }
+    .flow-num {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--green-mid); color: var(--white);
+      font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .flow-text h4 { font-size: 14px; font-weight: 700; color: var(--green-deep); margin-bottom: 4px; }
+    .flow-text p  { font-size: 12px; color: #33691E; line-height: 1.85; }
+
+    /* VIDEOS */
+    .video-section { background: var(--sky-deep); }
+    .video-section .sec-label { color: #7EB8F7; }
+    .video-section .sec-title { color: #FFFFFF; }
+    .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 1.25rem; }
+    .video-card { border-radius: 14px; overflow: hidden; background: #071E38; border: 1px solid rgba(214,234,255,0.15); }
+    .yt-wrap { position: relative; width: 100%; aspect-ratio: 9/16; background: #000; }
+    .yt-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .video-label { padding: 10px 12px; font-size: 12px; font-weight: 700; color: #D6EAFF; display: flex; align-items: center; gap: 6px; }
+    .video-label i { font-size: 14px; color: #7EB8F7; }
+    .insta-follow-btn {
+      display: block; width: 100%; padding: 12px; border-radius: 11px;
+      border: 1.5px solid rgba(214,234,255,0.5); background: transparent; color: #D6EAFF;
+      font-size: 13px; font-weight: 700; cursor: pointer;
+      font-family: 'Kosugi Maru', sans-serif; text-decoration: none; text-align: center;
+      transition: background 0.15s;
+    }
+    .insta-follow-btn:hover { background: rgba(214,234,255,0.1); }
+
+    /* VOICES */
+    .voices-section { background: var(--gold-pale); }
+    .voice-card { background: var(--white); border-radius: 14px; padding: 1.1rem 1.25rem; margin-bottom: 12px; display: flex; gap: 12px; border-left: 5px solid var(--gold); }
+    .voice-card:last-child { margin-bottom: 0; }
+    .va { width: 40px; height: 40px; border-radius: 50%; background: var(--gold-pale); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .vb p  { font-size: 13px; color: var(--text-main); line-height: 1.9; margin-bottom: 5px; }
+    .vname { font-size: 11px; color: var(--text-muted); }
+
+    /* FAQ */
+    .faq-section { background: var(--sky-pale); }
+    .faq-item { border-bottom: 1px solid rgba(11,61,110,0.1); padding: 1rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-size: 14px; font-weight: 700; color: var(--sky-deep); margin-bottom: 6px; display: flex; gap: 10px; align-items: flex-start; }
+    .qbadge { background: var(--sky-deep); color: var(--white); font-size: 11px; font-weight: 800; padding: 2px 9px; border-radius: 6px; flex-shrink: 0; margin-top: 2px; }
+    .faq-a { font-size: 13px; color: var(--text-sub); line-height: 1.9; padding-left: 34px; }
+
+    /* RULES */
+    .rules-section { background: var(--white); padding: 1.5rem 1.75rem; }
+    .rules-note { background: var(--sky-pale); border-left: 4px solid var(--sky-mid); border-radius: 0 12px 12px 0; padding: 1rem 1.25rem; font-size: 12px; color: var(--text-sub); line-height: 2; }
+    .rules-note strong { color: var(--sky-deep); display: block; font-size: 13px; margin-bottom: 4px; }
+
+    /* CTA */
+    .cta-section { background: var(--sky-deep); padding: 3rem 2rem; text-align: center; position: relative; overflow: hidden; }
+    .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 80% at 50% 100%, rgba(46,125,50,0.3) 0%, transparent 70%); }
+    .cta-section h2 { font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 900; color: var(--white); line-height: 1.55; margin-bottom: 0.75rem; position: relative; }
+    .cta-section p { font-size: 13px; color: #B8D4F0; margin-bottom: 1.5rem; line-height: 2; position: relative; }
+    .cta-btn {
+      display: inline-block; background: var(--gold); color: var(--gold-deep);
+      font-family: 'Nunito', sans-serif; font-size: 17px; font-weight: 800;
+      padding: 16px 36px; border-radius: 14px; border: none; cursor: pointer;
+      position: relative; text-decoration: none; transition: transform 0.12s;
+      box-shadow: 0 4px 20px rgba(245,158,11,0.4);
+    }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    /* FOOTER */
+    .footer { background: #071E38; padding: 1.5rem 2rem; text-align: center; font-size: 11px; color: rgba(214,234,255,0.45); line-height: 2; }
+
+    /* RESPONSIVE */
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 24px; }
+      .sec-title { font-size: 19px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .hero-photo img { height: 200px; }
+      .video-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="lp">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">🎮 マインクラフト × 英会話</div>
+    <h1>大好きなゲームで、<em>英語を話す子になる。</em></h1>
+    <p class="hero-sub">
+      SKY-Online英会話スクール。<br>
+      週1回・少人数オンラインレッスンで、<br>
+      英語が自然と好きになる環境をつくります。
+    </p>
+    <!-- ★ 画像・動画ファイルをこのHTMLと同じフォルダに置いてください -->
+    <div class="hero-photo">
+      <img src="レッスンメイン画像.JPG" alt="ヘッドセットをつけてオンラインレッスンを受ける女の子">
+      <div class="hero-photo-overlay"></div>
+    </div>
+    <a href="#contact" class="hero-cta">🌟 無料体験レッスンに申し込む</a>
+  </div>
+
+  <!-- CATCH -->
+  <div class="catch-section">
+    <h2>「やめたくない」と言わせる<br><span>英語の学び方があります。</span></h2>
+    <p>
+      従来の英語教室とは違い、お子さまが大好きな<br>
+      マインクラフトの世界がそのまま教室に。<br>
+      ゲームを通じて自然に英語が身につきます。
+    </p>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="section features-section">
+    <div class="sec-label">Features</div>
+    <div class="sec-title">このレッスンの4つの特徴</div>
+    <div class="feature-grid">
+      <div class="fc sky">
+        <div class="fc-icon ic-sky"><i class="ti ti-device-gamepad-2"></i></div>
+        <h3>ゲームが教材</h3>
+        <p>マインクラフトのミッションを英語で進める。楽しいから続けられる。</p>
+      </div>
+      <div class="fc green">
+        <div class="fc-icon ic-green"><i class="ti ti-users"></i></div>
+        <h3>少人数3〜5名</h3>
+        <p>一人ひとりが話せる。恥ずかしがり屋さんも安心の環境。</p>
+      </div>
+      <div class="fc gold">
+        <div class="fc-icon ic-gold"><i class="ti ti-clock"></i></div>
+        <h3>週1回60分</h3>
+        <p>月4回制。無理なく続けられるちょうどいい頻度。</p>
+      </div>
+      <div class="fc teal">
+        <div class="fc-icon ic-teal"><i class="ti ti-brand-discord"></i></div>
+        <h3>Discord活用</h3>
+        <p>レッスン外でも英語に触れる機会を自然につくります。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOW -->
+  <div class="section flow-section">
+    <div class="sec-label">Lesson Flow</div>
+    <div class="sec-title">レッスンの流れ <span style="font-size:14px; font-weight:500; color:#33691E;">（全1時間）</span></div>
+    <div class="flow-step">
+      <div class="flow-num">1</div>
+      <div class="flow-text">
+        <h4>みんなであいさつ <span style="font-size:11px; font-weight:400; color:#4CAF50;">Hello! How are you?</span></h4>
+        <p>講師・生徒みんなで英語のあいさつからスタート。緊張をほぐして楽しい雰囲気をつくります。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">2</div>
+      <div class="flow-text">
+        <h4>英語レッスンタイム（約10分）</h4>
+        <p>その日のテーマに合わせた英語表現を楽しく学びます。ゲームで使う言葉が中心なので、すぐに使いたくなる！</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">3</div>
+      <div class="flow-text">
+        <h4>REALMSサーバーでゲームスタート！</h4>
+        <p>みんなで専用サーバーに入り、その日のテーマでゲームが始まります。「水族館を作りたい」「古代都市を探検したい」など、<strong style="color:#1B5E20;">子どものやってみたいを優先</strong>。英語でコミュニケーションしながら遊びます。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">4</div>
+      <div class="flow-text">
+        <h4>振り返り＆あいさつで締め</h4>
+        <p>今日楽しかったことや使えた英語を振り返り。See you next week! で笑顔でレッスン終了。保護者へLINEでその日の様子をお知らせします。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEOS -->
+  <div class="section video-section">
+    <div class="sec-label">Lesson Movie</div>
+    <div class="sec-title">レッスンの様子を<br>動画でチェック！</div>
+    <div class="video-grid">
+
+      <!-- 動画1：水族館 -->
+      <div class="video-card">
+        <div class="yt-wrap">
+          <iframe src="https://www.youtube.com/embed/6jkXYw3vFyw"
+            title="水族館を作ろう！"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="video-label"><i class="ti ti-fish"></i>水族館を作ろう！</div>
+      </div>
+
+      <!-- 動画2：古代都市 -->
+      <div class="video-card">
+        <div class="yt-wrap">
+          <iframe src="https://www.youtube.com/embed/Jbdh97w3Dng"
+            title="古代都市を探検！"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="video-label"><i class="ti ti-compass"></i>古代都市を探検！</div>
+      </div>
+
+    </div>
+    <a href="https://www.instagram.com/sky_minecraft_english" target="_blank" rel="noopener" class="insta-follow-btn">
+      <i class="ti ti-brand-instagram" style="vertical-align:-2px; margin-right:6px;"></i>
+      @sky_minecraft_english でもっと見る
+    </a>
+  </div>
+
+  <!-- VOICES -->
+  <div class="section voices-section">
+    <div class="sec-label">Voice</div>
+    <div class="sec-title">保護者のみなさまの声</div>
+    <div class="voice-card">
+      <div class="va">👩</div>
+      <div class="vb">
+        <p>英語が嫌いだった息子が、マインクラフトと聞いた瞬間に目を輝かせて。今では自分から「英語で何て言うの？」と聞いてきます。</p>
+        <div class="vname">小学3年生のお母さん</div>
+      </div>
+    </div>
+    <div class="voice-card">
+      <div class="va">👨</div>
+      <div class="vb">
+        <p>他の習い事は続かなかったのに、これだけは「やめたくない！」と。ゲームを通じて自然に英語が出てくるのが驚きです。</p>
+        <div class="vname">小学5年生のお父さん</div>
+      </div>
+    </div>
+    <div class="voice-card">
+      <div class="va">👩</div>
+      <div class="vb">
+        <p>LINEでその日の様子を教えてもらえるので、夕食の時に「今日こんな英語話したの？」と会話が広がります。</p>
+        <div class="vname">小学2年生のお母さん</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section faq-section">
+    <div class="sec-label">FAQ</div>
+    <div class="sec-title">よくある質問</div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="qbadge">Q</span>マインクラフトを持っていなくても大丈夫ですか？</div>
+      <p class="faq-a">Java版・統合版どちらでも参加可能です。購入方法のご案内もしますのでご安心ください。</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="qbadge">Q</span>英語がまったくできない子でも参加できますか？</div>
+      <p class="faq-a">はい。アルファベットが読めれば大丈夫です。ゲームの中で楽しみながら自然に覚えていきます。</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="qbadge">Q</span>何歳から参加できますか？</div>
+      <p class="faq-a">小学1年生〜6年生が対象です。学年ごとにクラスを分けてご案内しています。</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="qbadge">Q</span>やめたくなったらどうすればいいですか？</div>
+      <p class="faq-a">いつでも解約できます。書面またはメールでご連絡いただければ翌月から退会となります。縛りは一切ありません。</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="qbadge">Q</span>個人情報は安全ですか？</div>
+      <p class="faq-a">はい。会員規約・プライバシーポリシーに基づき厳重に管理しており、サービス提供以外の目的で使用することはありません。</p>
+    </div>
+  </div>
+
+  <!-- RULES -->
+  <div class="rules-section">
+    <div class="rules-note">
+      <strong>ご利用にあたって</strong>
+      本サービスはSKY-Online英会話スクール運営規定に基づいて提供されます。会員登録時に規約への同意が必要です。レッスン中は他の生徒への配慮・講師の指示に従っていただくことをお願いしています。
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section" id="contact">
+    <h2>まずは1回、<br>無料で体験してみてください。</h2>
+    <p>定員になり次第、受付を締め切ります。<br>お子さんの目が輝く瞬間を、一緒に見てください。</p>
+    <!-- ★ href を申込フォームのURLに変更してください -->
+    <a href="#" class="cta-btn">🎮 無料体験レッスンに申し込む</a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>© 2025 SKY-Online英会話スクール　All Rights Reserved.</p>
+    <p style="margin-top:4px;">
+      <a href="#" style="color:rgba(214,234,255,0.5); text-decoration:none;">プライバシーポリシー</a>
+      　|　
+      <a href="#" style="color:rgba(214,234,255,0.5); text-decoration:none;">利用規約</a>
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
