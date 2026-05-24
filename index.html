@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SKY-Online英会話スクール | マインクラフトで英語を話す子になる</title>
+  <meta name="description" content="マインクラフトで楽しく英語が身につくオンライン英会話スクール。ネイティブ講師・少人数3〜5名・週1回60分・月謝9,750円。小学生対象。無料体験レッスン受付中。">
+  <meta name="keywords" content="マインクラフト 英語 小学生 オンライン英会話 Minecraft 子供英語教室 英語学習">
+  <meta property="og:title" content="SKY-Online英会話スクール | マインクラフトで英語を話す子になる">
+  <meta property="og:description" content="マインクラフトで楽しく英語が身につくオンライン英会話。ネイティブ講師・少人数・月謝9,750円。無料体験受付中。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sky-online.github.io/sky-online/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Kosugi+Maru&display=swap" rel="stylesheet">
@@ -134,6 +140,39 @@
     .vb p  { font-size: 13px; color: var(--text-main); line-height: 1.9; margin-bottom: 5px; }
     .vname { font-size: 11px; color: var(--text-muted); }
 
+    /* PRICING */
+    .pricing-section { background: var(--white); }
+    .price-card {
+      background: var(--sky-pale); border-radius: 16px;
+      border: 2px solid var(--sky-mid); padding: 1.5rem;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .price-badge {
+      display: inline-block; background: var(--sky-mid); color: var(--white);
+      font-size: 11px; font-weight: 700; padding: 4px 16px; border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+    .price-main {
+      font-family: 'Nunito', sans-serif; font-size: 42px; font-weight: 900;
+      color: var(--sky-deep); line-height: 1.1; margin-bottom: 0.5rem;
+    }
+    .price-main span { font-size: 16px; font-weight: 700; color: var(--text-muted); }
+    .price-note { font-size: 12px; color: var(--text-muted); margin-bottom: 1.25rem; }
+    .price-list { list-style: none; text-align: left; display: inline-block; }
+    .price-list li {
+      font-size: 13px; color: var(--text-sub); padding: 5px 0;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .price-list li::before {
+      content: '✅'; font-size: 14px; flex-shrink: 0;
+    }
+    .price-free-note {
+      margin-top: 1.25rem; padding: 0.75rem 1rem;
+      background: var(--green-pale); border-radius: 10px;
+      font-size: 12px; color: var(--green-deep); font-weight: 700;
+      border-left: 4px solid var(--green-mid);
+    }
+
     /* FAQ */
     .faq-section { background: var(--sky-pale); }
     .faq-item { border-bottom: 1px solid rgba(11,61,110,0.1); padding: 1rem 0; }
@@ -186,12 +225,11 @@
       週1回・少人数オンラインレッスンで、<br>
       英語が自然と好きになる環境をつくります。
     </p>
-    <!-- ★ 画像・動画ファイルをこのHTMLと同じフォルダに置いてください -->
     <div class="hero-photo">
       <img src="レッスンメイン画像.JPG" alt="ヘッドセットをつけてオンラインレッスンを受ける女の子">
       <div class="hero-photo-overlay"></div>
     </div>
-    <a href="https://lin.ee/P02Tb0Q" class="hero-cta">🌟 無料体験レッスンに申し込む</a>
+    <a href="https://lin.ee/qefEzS8" class="hero-cta">🌟 無料体験レッスンに申し込む（LINE）</a>
   </div>
 
   <!-- CATCH -->
@@ -271,8 +309,6 @@
     <div class="sec-label">Lesson Movie</div>
     <div class="sec-title">レッスンの様子を<br>動画でチェック！</div>
     <div class="video-grid">
-
-      <!-- 動画1：水族館 -->
       <div class="video-card">
         <div class="yt-wrap">
           <iframe src="https://www.youtube.com/embed/6jkXYw3vFyw"
@@ -283,8 +319,6 @@
         </div>
         <div class="video-label"><i class="ti ti-fish"></i>水族館を作ろう！</div>
       </div>
-
-      <!-- 動画2：古代都市 -->
       <div class="video-card">
         <div class="yt-wrap">
           <iframe src="https://www.youtube.com/embed/Jbdh97w3Dng"
@@ -295,7 +329,6 @@
         </div>
         <div class="video-label"><i class="ti ti-compass"></i>古代都市を探検！</div>
       </div>
-
     </div>
     <a href="https://www.instagram.com/sky_minecraft_english" target="_blank" rel="noopener" class="insta-follow-btn">
       <i class="ti ti-brand-instagram" style="vertical-align:-2px; margin-right:6px;"></i>
@@ -326,6 +359,28 @@
       <div class="vb">
         <p>LINEでその日の様子を教えてもらえるので、夕食の時に「今日こんな英語話したの？」と会話が広がります。</p>
         <div class="vname">小学2年生のお母さん</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING（新規追加） -->
+  <div class="section pricing-section">
+    <div class="sec-label">Pricing</div>
+    <div class="sec-title">料金・プラン</div>
+    <div class="price-card">
+      <div class="price-badge">月謝制・縛りなし</div>
+      <div class="price-main">¥9,750<span>／月（税込）</span></div>
+      <p class="price-note">月4回レッスン（各60分）</p>
+      <ul class="price-list">
+        <li>少人数3〜5名制（一人ひとりが話せる）</li>
+        <li>ネイティブ英語講師</li>
+        <li>入会金 ¥0・教材費 ¥0</li>
+        <li>縛りなし（いつでも退会可）</li>
+        <li>毎回レッスン後に保護者へLINE報告</li>
+      </ul>
+      <div class="price-free-note">
+        🎮 まずは無料体験レッスン1回から！<br>
+        お子さまのレベルに合わせてご案内します。
       </div>
     </div>
   </div>
@@ -368,8 +423,7 @@
   <div class="cta-section" id="contact">
     <h2>まずは1回、<br>無料で体験してみてください。</h2>
     <p>定員になり次第、受付を締め切ります。<br>お子さんの目が輝く瞬間を、一緒に見てください。</p>
-    <!-- ★ href を申込フォームのURLに変更してください -->
-    <a href="https://lin.ee/P02Tb0Q" class="cta-btn">🎮 無料体験レッスンに申し込む</a>
+    <a href="https://lin.ee/qefEzS8" class="cta-btn">🎮 無料体験レッスンに申し込む</a>
   </div>
 
   <!-- FOOTER -->
@@ -377,12 +431,11 @@
     <p>© 2025 SKY-Online英会話スクール　All Rights Reserved.</p>
     <p style="margin-top:4px;">
       <a href="#" style="color:rgba(214,234,255,0.5); text-decoration:none;">プライバシーポリシー</a>
-      　|　
+      　|
       <a href="#" style="color:rgba(214,234,255,0.5); text-decoration:none;">利用規約</a>
     </p>
   </div>
 
 </div>
-
 </body>
 </html>
